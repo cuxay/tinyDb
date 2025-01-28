@@ -1,6 +1,20 @@
 from tinydb import TinyDB
 import requests
+from goods import shop_data
 import json
+
+db = TinyDB('shop.json')
+
+for category, items in shop_data.items():
+    table = db.table(category)
+    table.insert_multiple(items)
+    
+
+
+
+
+
+
 db=TinyDB("db.json")
 rn=TinyDB('randomuser.json')
 user={
@@ -28,4 +42,4 @@ for i in r:
     rn.insert({'fullname':f'{i}'})
 db.insert(user2)
 db.insert(user)
-print(r)
+
