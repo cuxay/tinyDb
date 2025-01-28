@@ -29,3 +29,4 @@ for i in r:
 db.insert(user2)
 db.insert(user)
 print(r)
+print('hello world')
